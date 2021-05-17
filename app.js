@@ -8,7 +8,6 @@ ham.addEventListener('click', function () {
 let slidePosition = 0;
 const slides = document.querySelectorAll('.carousel__item');
 const totalSlides = slides.length;
-console.log(slides);
 
 document.querySelector('#carousel__button--next').addEventListener('click', function () {
   moveToNextSlide();
