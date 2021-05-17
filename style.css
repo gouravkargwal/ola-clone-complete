@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.desktop-header{
+  display: none;
+}
+.nav_bar{
+  display: flex;
+  padding: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 4px 2px gray;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+.logo{
+  align-self: center;
+  height: 30px;
+  position: relative;
+  left:33%;
+}
+
+/* Hamburger Menu */
+.ham{
+  position: relative;
+  left: 0;
+  padding: 20px;
+}
+.bar{
+  height: 2px;
+  width: 25px;
+  background-color: black;
+}
+.bar::after,
+.bar::before{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 25px;
+  background-color: black;
+}
+.bar::before{
+  top: 12px;
+}
+.bar::after{
+  bottom: 12px;
+}
+.ham.close .bar::before{
+  top: 20px;
+  transform: rotate(-45deg);
+  transition: 0.3s;
+}
+.ham.close .bar::after{
+  bottom:  20px;
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+.ham.close .bar{
+  background-color: transparent;
+}
+
+.sidebar{
+  max-width: 45%;
+  min-width: 45%;
+  height: fit-content;
+  position: absolute;
+  left: 0;
+  top: 52px;
+  z-index: 1;
+  background-color: white;
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+.sidebar ul{
+  list-style: none;
+}
+.sidebar ul li a{
+  padding: 15px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+.sidebar ul li a:hover{
+background-color: hsl(0,0%,88%);
+}
+.navtoggle{
+  transform: translateX(0);
+  position: fixed;
+}
+main{
+  transform: translateY(56px);
+}
+.book{
+  padding-top: 12px;
+  background-color: hsl(0,0%,96%);
+}
+.book__container--img h1,.book__container--img p{
+  display: none;
+}
+.type-fares{
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-evenly;
+}
+.type-fares li a{
+  text-decoration: none;
+  color: black;
+  border-radius: 15px;
+  padding: 5px;
+}
+.type-fares li a:hover{
+  background-color: hsl(66,100%,44%);
+}
+.booking-form{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.booking-form h2, h4{
+  align-self: center;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+input,select{
+  background-color: hsl(0,0%,88%);
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 5px 0;
+}
+input[type=submit]{
+  background-color: hsl(66,100%,44%);
+}
+
+/* Carosuel Start*/
+.carousel__box{
+  height: 450px;
+  background-color: hsl(0,0%,96%);
+}
+.carousel__box--info{
+  margin: 20px;
+}
+.carousel{
+  overflow: hidden;
+  position: relative;
+}
+.carousel__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel__container img{
+  max-width: 300px;
+}
+.carousel__container--info{
+  padding: 0px 20px;
+}
+.carousel__container--featureimg img{
+  margin-right: 10px;
+  border-radius: 100%;
+  width: 30px;
+  padding: 5px;
+}
+.carousel__container--featureimg img:hover{
+  background-color: hsl(66,100%,44%);
+}
+.carousel__item,
+.carousel__item--hidden{
+  display: none;
+}
+.carousel__item--visible{
+  display: block;
+  animation: fadeVisibility 0.5s;
+}
+.carousel__actions{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.carousel__actions button{
+  border: 2px solid hsl(8,8%,47%);
+  background-color: hsl(0,0%,96%);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 30px;
+  opacity: 0.5;
+  width: 40px;
+  height: 40px;
+}
+#carousel__button--prev{
+  margin-left: 10px;
+}
+#carousel__button--next{
+  margin-right: 10px;
+}
+
+@keyframes fadeVisibility{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transform: opacity linear;
+  }
+}
+
+/* Carosuel End*/
+
+.car-occasion{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.car-occasion-info{
+  margin: 20px;
+  margin-bottom: 10px;
+}
+.car-cards{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.car-card{
+  margin: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:  0px 0px 2px 2px rgb(0 0 0 / 20%);
+}
+.background-image{
+  background-image: url(https://cms-web.olacabs.com/00000000356.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+}
+.two{
+  background-image:url(https://cms-web.olacabs.com/00000000357.jpg) ;
+}
+.three{
+  background-image: url(https://cms-web.olacabs.com/00000000380.jpg);
+}
+.car-occasion-logo{
+  position: relative;
+}
+.car-occasion-logo img{
+  width: 60px;
+  border: 2px solid hsl(66,100%,44%);
+  background-color: hsl(66,100%,44%);
+  border-radius: 100%;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+}
+.car-card-info{
+  margin: 20px;
+}
+.car-card-info h4{
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.car-card-info p{
+  margin-bottom: 20px;
+  color: hsl(8,8%,47%);
+}
+.cab-features{
+  display: flex;
+  margin-bottom: 30px;
+}
+.cab-feature{
+  display: flex;
+  width: 100%;
+}
+.cab-feature-img{
+  margin-right: 4px;
+}
+.cab-feature-img img{
+  height: 32px;
+  width: 30px;
+}
+.cab-feature-info h6{
+  font-size: 15px;
+  font-weight: 100;
+  color: hsl(8,8%,47%);
+}
+.why-ola-reasons{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.why-ola-reason{
+  display: flex;
+  margin-bottom: 20px;
+}
+.why-ola-reason__img{
+  margin-right: 20px;
+  border-radius: 5px;
+  max-height: 110px;
+  max-width: 180px;
+}
+.why-ola-reason__info h5{
+  font-size: 22px;
+  font-weight: lighter;
+}
+.why-ola-reason__info p{
+  margin: 10px 0px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.ola-app{
+  margin: 20px;
+}
+.ola-app__img{
+  width: 90%;
+  margin-bottom: 30px;
+}
+.ola-app__info{
+  font-size: 18px;
+}
+.ola-app__download{
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.ola-app__download img{
+  height: 30px;
+}
+.ola-services{
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 25%)
+}
+.ola-service{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.ola-service img{
+  margin-right: 10px;
+}
+.footer-section{
+  background-color: hsl(0,0%,22%);
+  color: white;
+}
+.footer-section__title{
+  padding: 50px;
+  text-align: center;
+}
+.outstation-cities{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.outstation-cities__title{
+  margin-bottom: 10px;
+}
+.outstation-cities__name{
+  display: flex;
+  flex-direction: column;
+}
+.outstation-cities__name ul{
+  list-style: none;
+  margin-bottom: 10px;
+}
+.outstation-cities__name ul caption{
+ font-size: 16px;
+}
+.outstation-cities__name ul li{
+  text-align: center;
+}
+.social-links{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.social-links__title{
+  padding: 20px;
+  font-size: 12px;
+}
+.social-links__img img{
+  padding: 20px;
+}
+.discover-ola{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.discover-ola__title{
+  margin: 20px;
+}
+.discover-ola__links ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.discover-ola__links ul li{
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.footer__img{
+  padding: 20px;
+}
+.footer__info ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer__info ul li{
+  padding: 20px;
+}
+.copyrights{
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/*------------------------------Desktop CSS Start------------------------ */
+
+@media screen and (min-width: 768px) {
+ .mobile-header{
+   display: none;
+ }
+ .desktop-header{
+  display: block;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+ }
+ .desktop-header-one{
+   background: #000;
+   color: white;
+ }
+ .desktop-header-one ul{
+   display: flex;
+   list-style: none;
+   justify-content: flex-end;
+   padding: 5px;
+ }
+ .desktop-header-one ul li{
+   padding: 0px 20px;
+   border-right: 1px solid white;
+ }
+ .desktop-header-two{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0px 20px;
+   box-shadow: 0px 2px 2px 1px gainsboro;
+ }
+ .desktop-header-two img{
+   width: 120px;
+ }
+ .desktop-header-two ul{
+   display: flex;
+   list-style: none;
+  align-items: center;
+ }
+ .desktop-header-two ul li{
+   padding: 15px;
+ }
+ .desktop-header-two ul li button{
+   padding: 15px;
+   background-color: hsl(66,100%,44%);
+   border: none;
+ }
+ main{
+   transform: translateY(105px);
+ }
+ .book{
+   padding-top: 0;
+ }
+ .book__container{
+  position: relative;
+}
+.book__container--img{
+  background: url(https://cms-web.olacabs.com/00000000383.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+}
+.book__container--img::after{
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0,0,0.2);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.book__container--img h1,.book__container--img p{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  top: 20px;
+  font-size: 20px;
+  z-index: 1;
+  word-spacing: 5px;
+}
+.book__container--img h1{
+  font-size: 30px;
+}
+.book__container--form{
+  width: 50%;
+  top: 135px;
+  left: 30px;
+  max-width: 400px;
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+}
+.type-fares{
+  margin-top: 10px;
+}
+ .car-cards{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+ }
+ .car-card{
+   width: 40%;
+   max-width: 350px;
+ }
+ .why-ola-reasons{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 10px 80px;
+   margin: 20px;
+}
+
+/* Carosuel Start*/
+
+.carousel__container{
+  flex-direction: row;
+  padding: 20px;
+  justify-content: center;
+}
+.carousel__container img{
+  max-width: 500px;
+}
+.carousel__container--info{
+  padding: 0px 20px;
+  width: 50%;
+}
+
+/* Carosuel End*/
+ .ola-app{
+   display: flex;
+   flex-direction: row-reverse;
+   margin: 0;
+   margin-top: 30px;
+   justify-content: space-between;
+ }
+ .ola-app__img-container{
+   margin: 0px 10px;
+ }
+ .ola-app__img{
+  width: 90%;
+  max-width: 450px;
+  margin-bottom: 0;
+}
+.ola-app__info-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.ola-app__info h2{
+  font-size: 34px;
+}
+.ola-app__info p{
+  font-size: 16px;
+}
+.ola-app__download{
+  display: flex;
+  flex-wrap: wrap;
+}
+.ola-app__download img{
+  height: 50px;
+}
+.ola-services{
+  display: flex;
+  flex-direction: row;
+}
+.ola-service{
+  margin: 10px;
+}
+footer{
+  transform: translateY(100px);
+}
+.footer-section__title{
+  padding: 60px 0px 15px 17px;
+  text-align: left;
+}
+.outstation-cities{
+  justify-content: space-between;
+  flex-direction: row;
+}
+.outstation-cities__name{
+  flex-direction: row;
+}
+.outstation-cities__name ul{
+  margin: 20px;
+}
+.social-links{
+  flex-direction: row;
+  justify-content: space-between;
+}
+.social-links__title{
+  padding-left: 0;
+}
+.discover-ola{
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.discover-ola__title{
+  margin-left: 0;
+}
+.footer{
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.footer__img{
+  padding-left: 0;
+}
+}
