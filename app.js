@@ -43,3 +43,21 @@ function moveToNextSlide() {
 
   updateSlidePosition();
 };
+
+const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  speed: 600,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    786: {
+      slidesPerView: 3,
+    }
+  }
+});
